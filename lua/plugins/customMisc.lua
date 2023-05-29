@@ -1,3 +1,6 @@
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
 return {
   {
     "xiyaowong/transparent.nvim",
@@ -32,5 +35,8 @@ return {
         exclude_groups = {}, -- table: groups you don't want to clear
       })
     end,
+  },
+  {
+    "github/copilot.vim",
   },
 }
