@@ -1,6 +1,7 @@
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
+
 return {
   {
     "xiyaowong/transparent.nvim",
@@ -38,5 +39,16 @@ return {
   },
   {
     "github/copilot.vim",
+  },
+  {
+    "numToStr/FTerm.nvim",
+    opts = {
+      cmd = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe"',
+      border = "none",
+      dimensions = {
+        height = 0.9,
+        width = 0.9,
+      },
+    },
   },
 }
