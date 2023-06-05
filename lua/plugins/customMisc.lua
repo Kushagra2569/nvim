@@ -51,4 +51,19 @@ return {
       },
     },
   },
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function() end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "nordic",
+    },
+  },
+  {
+    "Shatur/neovim-ayu",
+  },
 }
