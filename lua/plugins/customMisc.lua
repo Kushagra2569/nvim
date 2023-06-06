@@ -45,6 +45,7 @@ return {
     opts = {
       cmd = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe"',
       border = "none",
+      hl = "TabLine",
       dimensions = {
         height = 0.9,
         width = 0.9,
