@@ -6,6 +6,7 @@ return {
         "stylua",
         "clangd",
         "rust-analyzer",
+        "gopls",
       },
     },
   },
@@ -43,6 +44,26 @@ return {
           require("rust-tools").setup({ server = opts })
           return true
         end,
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      -- make sure mason installs the server
+      servers = {
+        gopls = {
+          cmd = { "gopls" },
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePlaceholders = true,
+              analyses = {
+                unusedparams = true,
+              },
+            },
+          },
+        },
       },
     },
   },
