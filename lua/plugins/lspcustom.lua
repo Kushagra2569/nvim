@@ -7,6 +7,7 @@ return {
         "clangd",
         "rust-analyzer",
         "gopls",
+        "typescript-language-server",
       },
     },
   },
