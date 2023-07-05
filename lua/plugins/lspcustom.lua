@@ -8,6 +8,7 @@ return {
         "rust-analyzer",
         "gopls",
         "typescript-language-server",
+        "tailwindcss-language-server",
       },
     },
   },
@@ -65,6 +66,7 @@ return {
             },
           },
         },
+        tailwindcss = {},
       },
     },
   },
@@ -76,5 +78,13 @@ return {
       crates.setup(opts)
       crates.show()
     end,
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+      },
+    },
   },
 }
