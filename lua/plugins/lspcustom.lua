@@ -25,6 +25,7 @@ return {
       })
     end,
   },
+  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
   {
     "rust-lang/rust.vim",
     ft = "rust",

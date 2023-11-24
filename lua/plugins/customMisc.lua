@@ -54,9 +54,13 @@ return {
   },
   {
     "AlexvZyl/nordic.nvim",
-    lazy = false,
     priority = 1000,
-    config = function() end,
+    config = function()
+      require("nordic").setup({ -- can also use require("config.nordic") to call nordic file under config folder for bigger configs
+        swap_backgrounds = true,
+      })
+    end,
+    lazy = true,
   },
   {
     "LazyVim/LazyVim",
