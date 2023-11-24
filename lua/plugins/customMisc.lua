@@ -64,6 +64,7 @@ return {
       colorscheme = "nordic",
     },
   },
+  { "notken12/base46-colors" },
   {
     "Shatur/neovim-ayu",
   },
