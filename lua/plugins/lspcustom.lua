@@ -9,6 +9,12 @@ return {
         "gopls",
         "typescript-language-server",
         "tailwindcss-language-server",
+        -- python
+        "ruff-lsp", -- lsp
+        "ruff", -- linter (but used as formatter)
+        "pyright", -- lsp
+        "black", -- formatter
+        "mypy", -- linter
       },
     },
   },
@@ -22,6 +28,8 @@ return {
         "c",
         "rust",
         "javascript",
+        "python",
+        "go",
       })
     end,
   },
@@ -68,6 +76,9 @@ return {
           },
         },
         tailwindcss = {},
+        pyright = {
+          filetypes = { "python" },
+        },
       },
     },
   },
