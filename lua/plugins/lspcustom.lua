@@ -9,6 +9,7 @@ return {
         "gopls",
         "typescript-language-server",
         "tailwindcss-language-server",
+        "svelte-language-server",
         -- python
         "ruff-lsp", -- lsp
         "ruff", -- linter (but used as formatter)
@@ -30,6 +31,8 @@ return {
         "javascript",
         "python",
         "go",
+        "svelte",
+        "css",
       })
     end,
   },
