@@ -102,4 +102,33 @@ return {
       },
     },
   },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = function(_, opts)
+      -- replace `prettier` with `prettierd` first
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      for _, ft in ipairs({
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+        "html",
+        "css",
+        "json",
+        "markdown",
+      }) do
+        opts.formatters_by_ft[ft] = { "prettierd", "prettier" }
+      end
+
+      -- ensure the `prettierd` formatter is defined
+      opts.formatters = opts.formatters or {}
+      opts.formatters.prettierd = {
+        -- only activate if the daemon is available
+        condition = function()
+          return vim.fn.executable("prettierd") == 1
+        end,
+      }
+    end,
+  },
 }
