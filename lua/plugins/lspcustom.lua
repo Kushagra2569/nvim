@@ -14,7 +14,7 @@ return {
         "ruff-lsp", -- lsp
         "ruff", -- linter (but used as formatter)
         "pyright", -- lsp
-        "black", -- formatter
+        "black", -- swift
         "mypy", -- linter
       },
     },
@@ -33,6 +33,7 @@ return {
         "go",
         "svelte",
         "css",
+        "swift",
       })
     end,
   },
@@ -81,6 +82,33 @@ return {
         tailwindcss = {},
         pyright = {
           filetypes = { "python" },
+        },
+        sourcekit = {
+          cmd = { "xcrun", "sourcekit-lsp" },
+          filetypes = { "swift", "objective-c", "objective-cpp" },
+
+          root_dir = function(bufnr, on_dir)
+            local fname = vim.api.nvim_buf_get_name(bufnr)
+            if fname == "" then
+              on_dir(nil)
+              return
+            end
+
+            local startpath = vim.fs.dirname(fname)
+
+            local function find(pattern)
+              local match = vim.fs.find(pattern, { path = startpath, upward = true })[1]
+              return match and vim.fs.dirname(match) or nil
+            end
+
+            local root = find(".buildServer.json")
+              or find("*.xcworkspace")
+              or find("*.xcodeproj")
+              or find("Package.swift")
+              or find(".git")
+
+            on_dir(root)
+          end,
         },
       },
     },
