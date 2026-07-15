@@ -11,8 +11,6 @@ return {
         "tailwindcss-language-server",
         "svelte-language-server",
         -- python
-        "ruff-lsp", -- lsp
-        "ruff", -- linter (but used as formatter)
         "pyright", -- lsp
         "black", -- swift
         "mypy", -- linter
